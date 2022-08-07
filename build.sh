@@ -1,4 +1,6 @@
-#!/bin/sh
+#!/bin/bash
+
+TOKEN=$1
 
 sudo apt-get install -y build-essential checkinstall cmake pkg-config yasm git gfortran libjpeg8-dev
 sudo add-apt-repository "deb http://security.ubuntu.com/ubuntu> xenial-security main" && sudo apt update -y
@@ -15,7 +17,7 @@ VIRTUALENVWRAPPER_PYTHON='/usr/bin/python3'" >> ~/.bashrc
 echo "source /usr/local/bin/virtualenvwrapper.sh" >> ~/.bashrc
 source ~/.bashrc
 
-git clone https://github.com/militech-at/opencv.git
+git clone https://$TOKEN@github.com/militech-at/opencv.git
 
 git clone https://github.com/opencv/opencv_contrib.git
 cd opencv_contrib
@@ -47,7 +49,7 @@ sudo apt -y install libeigen3-dev
 sudo apt-get -y install libblas-dev liblapack-dev libboost-all-dev
 
 
-git clone https://github.com/militech-at/Pangolin.git
+git clone https://$TOKEN@github.com/militech-at/Pangolin.git
 sudo apt -y install libgl1-mesa-dev libglew-dev cmake
 cd Pangolin
 mkdir build
@@ -63,14 +65,14 @@ cd ..
 pip3 install -y matplotlib open3d==12.0.0 pyntcloud
 
 
-git clone https://github.com/militech-at/Autonomous-Drone-Scanning-and-Mapping
-git clone https://github.com/militech-at/ORB_SLAM2
+git clone https://$TOKEN@github.com/militech-at/Autonomous-Drone-Scanning-and-Mapping
+git clone https://$TOKEN@github.com/militech-at/ORB_SLAM2
 
 cd ORB_SLAM2
 ./build.sh
 cd ..
 
-git clone https://github.com/militech-at/ORB_SLAM3
+git clone https://$TOKEN@github.com/militech-at/ORB_SLAM3
 
 cd ORB_SLAM3
 ./build.sh
